@@ -10,6 +10,12 @@ contract CourseTokenV2 is CourseTokenV1{
 
   mapping(address => mapping(address => uint256)) allowances;
 
+   function CourseTokenV2(uint256 initSupply) CourseTokenV1(initSupply) {
+    // constructor
+    // we have invoked the constructor for the V1, so we are good
+  }
+
+
   //how many tokens can spender spend from owner's account
   function allowance(address _owner, address _spender) view returns(uint remaining){
     // return the allowance for _spender approved by _owner
@@ -54,7 +60,5 @@ contract CourseTokenV2 is CourseTokenV1{
   return true;
   }
  
- constructor (uint256 initialSupply) public{
 
-}
 }
